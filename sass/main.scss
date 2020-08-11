@@ -10,6 +10,8 @@ Dark green: #28b485
 $color-primary: #7ed56f;
 $color-primary-light: #55c57a;
 $color-primary-dark: #28b485;
+$color-grey-dark: #777777;
+$color-white: #ffffff;
 
 /* Global */
     /* Universal reset */
@@ -29,7 +31,7 @@ body {
     font-weight: 400;
     /*font-size: 16px;*/
     line-height: 1.7;
-    color: #777777;
+    color: $color-grey-dark;
     padding: 3rem;
     box-sizing: border-box;
 }
@@ -68,7 +70,7 @@ body {
 }
 
 .heading-primary {
-    color: #ffffff;
+    color: $color-white;
     text-transform: uppercase;
     /* Small fix to ensure animation doesn't shake to the top */
     backface-visibility: hidden;
@@ -157,8 +159,8 @@ body {
 }
 
 .btn--white {
-    background-color: #ffffff;
-    color: #777777;
+    background-color: $color-white;
+    color: $color-grey-dark;
 }
 
 .btn::after {
@@ -175,7 +177,7 @@ body {
 }
 
 .btn--white::after {
-    background-color: #ffffff;
+    background-color: $color-white;
 }
 
 .btn:hover::after {
