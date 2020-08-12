@@ -1,75 +1,16 @@
 /*
-COLORS:
-
-Light green: #7ed56f
-Medium green: #55c57a
-Dark green: #28b485
 
 to compile use "npm run compile:sass" command in terminal
 to live-server watch use "live-server" command in terminal
 
 */
-/* Global */
-/* Universal reset */
-*, *::after, *::before {
-  margin: 0;
-  padding: 0;
-  /* change box model to exclude borders/paddings etc */
-  box-sizing: inherit; }
-
-html {
-  font-size: 62.5%; }
-
-body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  /*font-size: 16px;*/
-  line-height: 1.7;
-  color: #777777;
-  padding: 3rem;
-  box-sizing: border-box; }
-
-/* Header element */
-.header {
-  height: 95vh;
-  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../img/hero.jpg");
-  background-size: cover;
-  background-position: top;
-  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
-  position: relative; }
-  .header__logo-box {
-    position: absolute;
-    top: 4rem;
-    left: 4rem; }
-  .header__logo {
-    height: 3.5rem; }
-  .header__text-box {
-    position: absolute;
-    top: 40%;
-    left: 50%;
-    /* Shift element back to 50% of itself to ensure it is exactly at the center of its own axis' */
-    transform: translate(-50%, -50%);
-    text-align: center; }
-
-.heading-primary {
-  color: #ffffff;
-  text-transform: uppercase;
-  /* Small fix to ensure animation doesn't shake to the top */
-  backface-visibility: hidden;
-  margin-bottom: 6rem; }
-  .heading-primary--main {
-    display: block;
-    font-size: 6rem;
-    font-weight: 400;
-    letter-spacing: 3.5rem;
-    animation: moveInLeft 2s ease-in-out; }
-  .heading-primary--sub {
-    display: block;
-    font-size: 2rem;
-    font-weight: 700;
-    letter-spacing: 1.75rem;
-    animation: moveInRight 2s ease-in-out; }
-
+/* import partials */
+/*
+COLORS:
+Light green: #7ed56f
+Medium green: #55c57a
+Dark green: #28b485
+*/
 @keyframes moveInLeft {
   0% {
     opacity: 0;
@@ -98,6 +39,47 @@ body {
     opacity: 1;
     transform: translate(0); } }
 
+/* Universal reset */
+*, *::after, *::before {
+  margin: 0;
+  padding: 0;
+  /* change box model to exclude borders/paddings etc */
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  /*font-size: 16px;*/
+  line-height: 1.7;
+  color: #777777;
+  padding: 3rem;
+  box-sizing: border-box; }
+
+.heading-primary {
+  color: #ffffff;
+  text-transform: uppercase;
+  /* Small fix to ensure animation doesn't shake to the top */
+  backface-visibility: hidden;
+  margin-bottom: 6rem; }
+  .heading-primary--main {
+    display: block;
+    font-size: 6rem;
+    font-weight: 400;
+    letter-spacing: 3.5rem;
+    animation: moveInLeft 2s ease-in-out; }
+  .heading-primary--sub {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 1.75rem;
+    animation: moveInRight 2s ease-in-out; }
+
 .btn:link, .btn:visited {
   text-transform: uppercase;
   text-decoration: none;
@@ -122,8 +104,6 @@ body {
 .btn--white {
   background-color: #ffffff;
   color: #777777; }
-  .btn--white::after {
-    background-color: #ffffff; }
 
 .btn::after {
   content: "";
@@ -137,6 +117,31 @@ body {
   z-index: -1;
   transition: all .4s; }
 
+.btn--white::after {
+  background-color: #ffffff; }
+
 .btn--animated {
-  animation: moveInBottom 3s ease-in-out;
+  animation: moveInBottom 3s ease-in-out 0.75s;
   animation-fill-mode: backwards; }
+
+/* Header element layout */
+.header {
+  height: 95vh;
+  background-image: linear-gradient(to right bottom, rgba(85, 197, 122, 0.8), rgba(40, 180, 133, 0.8)), url("../../img/hero.jpg");
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+  position: relative; }
+  .header__logo-box {
+    position: absolute;
+    top: 4rem;
+    left: 4rem; }
+  .header__logo {
+    height: 3.5rem; }
+  .header__text-box {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    /* Shift element back to 50% of itself to ensure it is exactly at the center of its own axis' */
+    transform: translate(-50%, -50%);
+    text-align: center; }
