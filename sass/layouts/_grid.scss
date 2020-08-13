@@ -1,0 +1,27 @@
+// grid layout
+.row {
+  max-width: $grid-width;
+  background-color: #eeeeee;
+  margin: 0 auto;
+  color: $color-white;
+
+  //.row:not(:last-child) to add the vertical margin to everything except last child in the row.
+  &:not(:last-child) {
+    margin-bottom: $gutter-vertical;
+  }
+
+  // mixin to add clearfix to float to solve row height of 0.
+  // transcribes to .row::after
+  @include clearfix;
+
+  .col-1-of-2 {
+    // in order for calc() in scss to see the variable we must use #{} and wrap it.
+    width: calc((100% - #{$gutter-horizontal}) / 2);
+    background-color: orangered;
+    float: left;
+
+    &:not(:last-child) {
+      margin-right: $gutter-horizontal;
+    }
+  }
+}
