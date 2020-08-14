@@ -1,9 +1,8 @@
 // grid layout
 .row {
   max-width: $grid-width;
-  background-color: #eeeeee;
   margin: 0 auto;
-  color: $color-white;
+  color: $color-black;
 
   //.row:not(:last-child) to add the vertical margin to everything except last child in the row.
   &:not(:last-child) {
@@ -16,7 +15,6 @@
 
   // target any class attribute value that starts with "col-"
   [class^="col-"] {
-    background-color: orangered;
     float: left;
 
     &:not(:last-child) {
