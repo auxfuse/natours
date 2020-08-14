@@ -2,7 +2,6 @@
 .row {
   max-width: $grid-width;
   margin: 0 auto;
-  color: $color-black;
 
   //.row:not(:last-child) to add the vertical margin to everything except last child in the row.
   &:not(:last-child) {
