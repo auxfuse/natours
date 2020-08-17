@@ -2,5 +2,22 @@
   background-color: $color-grey-light-1;
   padding: 25rem 0;
   margin-top: -20vh;
+}
 
+.section-features {
+  padding: 20rem 0;
+  background-image: linear-gradient(
+    to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url("../../img/nat-4.jpg");
+  background-size: cover;
+  // skew the entire section to simulate clip-path similarly used on header image
+  transform: skewY(-7deg);
+  margin-top: -11.5rem;
+  // add counteracting skew for children of the section
+  // .section-features * <--- the section-features and all of it's direct children
+  & > * {
+    transform: skewY(7deg);
+  }
 }
