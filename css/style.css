@@ -6,6 +6,20 @@ to live-server watch use "live-server" command in terminal
 */
 /* import partials */
 /*
+  Media Query Manager notes:
+    0-600px (37.5em): Phone
+    600-900px (56.25em): Tab-port
+    900-1200px (75em): Tab-land
+    1200-1800px: Base style (desktop first)
+    1800px+ (112.5em): Big-desktop
+
+  $breakpoint argument choices:
+    - phone
+    - tab-port
+    - tab-land
+    - big-desktop
+*/
+/*
 COLORS:
 Light green: #7ed56f
 Medium green: #55c57a
@@ -54,6 +68,15 @@ Dark green: #28b485
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; } }
 
 body {
   box-sizing: border-box; }
